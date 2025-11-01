@@ -17,7 +17,7 @@ import logo from '@/public/images/logo.png';
 import { useCountries } from './useGetCountries';
 
 export default function Register({ setStep, setPhone, setCountryIso }) {
-    const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
+    const [lang, setLang] = useState(null);
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setLang(localStorage.getItem('lang'));

@@ -17,7 +17,7 @@ import Link from 'next/link';
 import { useCountries } from './useGetCountries';
 
 export default function LoginPage({ setStep, setPhone, setCountryIso }) {
-  const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
+  const [lang, setLang] = useState(null);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setLang(localStorage.getItem('lang'));

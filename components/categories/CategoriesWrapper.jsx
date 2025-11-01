@@ -5,7 +5,7 @@ import ProductsWithFilter from './ProductsWithFilter';
 import { useSearchParams } from 'next/navigation';
 
 export default function CategoriesWrapper({ type }) {
-    const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
+    const [lang, setLang] = useState(null);
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [sortBy, setSortBy] = useState(null);

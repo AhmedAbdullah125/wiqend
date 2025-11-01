@@ -3,9 +3,8 @@ import axios from "axios";
 import { API_BASE_URL } from "@/lib/apiConfig";
 import { useQuery } from "@tanstack/react-query";
 const fetchCountries = async (lang) => {
-  const token = localStorage.getItem("token");
   const headers = { "accept-language": lang, };
-  if (token) headers.Authorization = `Bearer ${token}`;
+  if (localStorage.getItem("token")) headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
   const response = await axios.get(
     `${API_BASE_URL}/countries`,
     { headers }

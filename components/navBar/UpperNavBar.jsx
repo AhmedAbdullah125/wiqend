@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import axios from 'axios'
 import { API_BASE_URL } from '@/lib/apiConfig'
 export default function UpperNavBar() {
-    let [lang, setLang] = useState( localStorage.getItem('lang') || 'ar');
+    let [lang, setLang] = useState(null);
     const [countryData, setCountryData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCountry , setSelectedCountry] = useState('');

@@ -15,7 +15,7 @@ import { t } from '@/lib/i18n';
 import { sendPostRequest } from './loginRequest';
 
 export default function Verify({ setStep, phone, countryIso, setPhone }) {
-    const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
+    const [lang, setLang] = useState(null);
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setLang(localStorage.getItem('lang'));
