@@ -1,7 +1,7 @@
-import CategoriesWrapper from '@/components/categories/CategoriesWrapper'
+import CategoriesCont from '@/components/categories/CategoriesCont'
 import React from 'react'
 export default function page() {
     return (
-        <CategoriesWrapper />
+        <CategoriesCont />
     )
 }

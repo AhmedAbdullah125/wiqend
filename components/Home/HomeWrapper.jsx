@@ -4,7 +4,7 @@ import Hero from './Hero'
 import HomeCategories from './HomeCategories'
 import HomeCategory from './HomeCategory'
 export default function HomeWrapper() {
-  const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
+  const [lang, setLang] = useState(null);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setLang(localStorage.getItem('lang'));
