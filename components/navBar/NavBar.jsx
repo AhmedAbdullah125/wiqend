@@ -8,11 +8,17 @@ import { useGetHomeCategories } from '../Home/useGetHomeCategories';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 export default function NavBar() {
-    const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
-    const [token, setToken] = useState(localStorage.getItem('token') || null);
+    const [lang, setLang] = useState(null);
+    const [token, setToken] = useState( null);
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setLang(localStorage.getItem('lang'));
+            if (localStorage.getItem('lang') === 'ar' || localStorage.getItem('lang') === 'en') {
+                setLang(localStorage.getItem('lang'));
+            }
+            else {
+                localStorage.setItem('lang', 'en');
+                setLang('en');
+            }
             setToken(localStorage.getItem('token'));
         }
     }, []);
@@ -54,6 +60,7 @@ export default function NavBar() {
                             <Link href="/"><Image src={logo} className="img-fluid" alt="logo" />
                             </Link>
                         </figure>
+
                         <div className="navgition">
                             <div className="nav-head">
                                 <button className="close-menu">

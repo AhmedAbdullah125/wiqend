@@ -9,14 +9,14 @@ import { useGetHomeCategories } from '../Home/useGetHomeCategories';
 import Link from 'next/link';
 import Image from 'next/image';
 export default function Footer() {
-  const [lang, setLang] = useState(localStorage.getItem('lang') || 'ar');
+  const [lang, setLang] = useState(null);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setLang(localStorage.getItem('lang'));
     }
   }, []);
   const { data, isLoading, isError } = useGetHomeCategories(lang);
-  
+
   return (
     <footer>
       <div className="container">
@@ -40,6 +40,7 @@ export default function Footer() {
               <li><Link href="/faqs">{t(lang, 'FAQS')}</Link></li>
             </ul>
           </div>
+          
           <div className="footer-item">
             <h3>{t(lang, 'categories')}</h3>
             {
