@@ -1,0 +1,472 @@
+/*           swiper section                     */
+.main-slider {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+
+  @include max-767 {
+    margin-bottom: 16px;
+  }
+}
+
+.main,
+.swiper-cont {
+  position: relative;
+}
+
+.main .pro-img {
+  @include flexCenter;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 430/180;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #00000066;
+  }
+}
+
+.main-content {
+  position: absolute;
+  inset: 0;
+  text-align: start;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  h2 {
+    font-weight: 700;
+    font-size: 32px;
+    color: $white;
+    margin-bottom: 10px;
+    max-width: 50%;
+
+    @include max-991 {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    color: $white;
+    margin-bottom: 0;
+    max-width: 55%;
+
+    @include max-991 {
+      font-size: 14px;
+    }
+  }
+}
+
+.main .pro-img img,.main .pro-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-slider .swiper-btn {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: $white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 1320px) {
+  .main-slider .swiper-btn {
+    display: flex;
+  }
+}
+
+.main-slider .swiper-btn:hover {
+  color: $main;
+}
+
+.main-slider .swiper-btn i {
+  z-index: 2;
+}
+
+.swiper-btn.swiper-btn-next {
+  left: 28px;
+}
+
+.swiper-btn.swiper-btn-prev {
+  right: 28px;
+}
+
+.main-slider,
+.booking-card {
+  .swiper-pagination {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+    @include flexCenter;
+    gap: 3px;
+  }
+
+  @media (max-width: 991px) {
+    .swiper-pagination {
+      bottom: 8px;
+    }
+  }
+
+  .swiper-pagination .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    background-color: $white;
+    opacity: 0.6;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+    outline: none !important;
+    border-radius: 50%;
+  }
+
+  .swiper-pagination .swiper-pagination-bullet:hover {
+    opacity: 1;
+  }
+
+  .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: $main;
+    opacity: 1;
+    width: 12px !important;
+  }
+}
+.swiper-pagination{
+  transition: all 0.3s ease-in-out;
+  .swiper-pagination-bullet{
+    transition: all 0.3s ease-in-out;
+  }
+}
+.booking-card {
+  .swiper-pagination {
+    bottom: 8px;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px !important;
+  height: 8px !important;
+  border-radius: 4px !important;
+}
+
+/*                          main-slider                             */
+.category-section {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+
+  @include max-767 {
+    margin-bottom: 16px;
+  }
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 24px;
+  color: $main;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+
+  text-align: center;
+  @include max-767 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-align: start;
+  }
+}
+
+.category-cont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 106px;
+  font-size: 16px;
+  color: $hover;
+  @include tr;
+  text-transform: capitalize;
+  @media screen and (max-width: 767px) {
+    max-width: 60px;
+    
+  }
+  figure {
+    @include flexCenter;
+    overflow: hidden;
+    position: relative;
+    max-width: 164px;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 0;
+    @include tr;
+
+    @include max-767 {
+      max-width: 106px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include tr;
+  }
+
+  &:hover {
+    color: $main;
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+//booking grid
+.most-booking-cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+
+  @include max-1200 {
+    grid-template-columns: 2fr;
+  }
+
+  @include max-991 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.most-booking {
+  .category-swiper {
+    padding-bottom: 40px;
+
+    .category-swiper-slide {
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid #0000001a;
+    }
+  }
+}
+
+.booking-card {
+  width: 100%;
+}
+
+.booking-img {
+  position: relative;
+  width: 100%;
+
+  figure {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+    aspect-ratio: 390/179;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include tr;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  // .swiper {
+  //   padding-bottom: 20px;
+  // }
+}
+
+.booking-btns {
+  position: absolute;
+  top: 20px;
+  inset-inline-end: 20px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.fav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  color: $main;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: $main;
+    color: $white;
+  }
+}
+
+.card-content {
+  background-color: $white;
+  padding: 15px 20px;
+  border: 1px solid #0000001a;
+  border-top: 0px solid transparent;
+  border-radius: 0 0 20px 20px;
+}
+
+.detail-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.category-name {
+  font-weight: 400;
+  font-size: 12px;
+  color: #707070;
+}
+
+.detail-info-item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #707070;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  position: relative;
+
+  i {
+    font-size: 16px;
+    color: #fac950;
+  }
+
+  span span {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.item-price {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 400;
+  font-size: 12px;
+  color: $main;
+  margin-bottom: 2px;
+
+  .price {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+.card-item-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: $hover;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.card-place {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  color: $hover;
+  margin-bottom: 10px;
+
+  i {
+    font-size: 10px;
+  }
+}
+
+.card-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 15px;
+  border-radius: 12px;
+  background-color: #f4f5fd;
+  //scroll bar hide
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $main;
+    font-weight: 500;
+    font-size: 14px;
+    text-wrap: nowrap;
+    flex-shrink: 0;
+  }
+
+  i {
+    font-size: 17px;
+  }
+}
+
+.custom-ancor {
+  width: 170px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: $sec;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: $white;
+  @include flexCenter;
+
+  gap: 8px;
+
+  i {
+    font-size: 18px;
+  }
+
+  @include tr;
+
+  margin: 0 auto;
+  &:hover {
+    background-color: $main;
+    color: $white;
+  }
+}
